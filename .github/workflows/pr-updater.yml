@@ -7,7 +7,6 @@ on:
 
 jobs:
     autoupdate:
-        if: ${{ github.event.label.name == 'keep-me-updated' }}
         runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@v1
