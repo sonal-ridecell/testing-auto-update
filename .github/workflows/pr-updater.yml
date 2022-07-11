@@ -3,7 +3,7 @@ name: PR update
 on:
     push:
         branches: 
-            - main
+            - master
 
 jobs:
     autoupdate:
@@ -11,6 +11,6 @@ jobs:
         steps:
         - uses: actions/checkout@v1
         - name: update all prs
-          uses: maxkomarychev/pr-updater-action@v1.0.0
+          uses: johncomposed/pr-updater-action@v1.0.2
           with:
               token: ${{ secrets.USER_TOKEN }}
