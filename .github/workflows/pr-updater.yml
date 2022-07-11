@@ -1,0 +1,17 @@
+name: PR update
+
+on:
+    push:
+        branches: 
+            - master
+
+jobs:
+    autoupdate:
+        if: ${{ github.event.label.name == 'keep-me-updated' }}
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v1
+        - name: update all prs
+            uses: maxkomarychev/pr-updater-action@v1.0.0
+            with:
+                token: ${{ secrets.USER_TOKEN }}
